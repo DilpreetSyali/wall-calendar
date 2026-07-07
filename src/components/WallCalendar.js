@@ -21,7 +21,7 @@ export default function WallCalendar() {
   return (
     <div className={styles.outer}>
       <div className={styles.demoBanner}>
-        Demo-ready branch preview for PR
+        Demo PR preview for bot labeling
       </div>
 
       {/* Spiral binding */}
