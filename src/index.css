@@ -1,0 +1,76 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --paper: #f5f0e8;
+  --paper-dark: #ede7d9;
+  --cream: #faf7f2;
+  --ink: #0d0d0d;
+  --accent: #1a6b9e;
+  --accent-light: #3a8cbf;
+  --accent-pale: #d4eaf7;
+  --red: #c0392b;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(26,107,158,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,146,42,0.06) 0%, transparent 50%),
+    linear-gradient(160deg, #2a2a2a 0%, #1a1a1a 50%, #222 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button { cursor: pointer; font-family: var(--font-body); }
+textarea, input { font-family: var(--font-body); }
+::selection { background: var(--accent-pale); color: var(--ink); }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--paper-dark); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pageFlip {
+  0%   { transform: rotateX(0deg);   opacity: 1; }
+  45%  { transform: rotateX(-90deg); opacity: 0; }
+  55%  { transform: rotateX( 90deg); opacity: 0; }
+  100% { transform: rotateX(0deg);   opacity: 1; }
+}
+@keyframes ringSwing {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate( 2deg); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.1); }
+}
+@keyframes noteAppear {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
